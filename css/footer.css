@@ -1,0 +1,35 @@
+/*Color Palette 262626 • ACBFA4 • E2E8CE • FF7F11 • FF1B1C⁣*/
+
+footer{
+    background-color: #E2E8CE ;
+  color: #262626;
+  font-family: Sans-Serif;
+}
+.container{
+    text-align: center;
+    width: auto;
+}
+
+.row{
+    text-align: center;
+}
+
+.info-subscribe{
+    text-align: center;
+}
+
+.contact-info{
+    display: inline-block;
+}
+.contact-info ul{
+   
+}
+.subscribe{
+    display: inline-block;
+    height: auto;
+    
+}
+.author{
+    background-color: #262626;
+    color: #E2E8CE;
+}
