@@ -7,6 +7,7 @@
   color: #262626;
   vertical-align: middle;
   font-family: Sans-Serif;
+  display: inline-block;
 }
 
 .search {
@@ -15,7 +16,15 @@
     float: left;
     width: auto;
     height: auto;
+    display: inline-block;
+    vertical-align: middle;
     
+}
+.form-control-input{
+
+    display: inline-block;
+    vertical-align: middle;
+    width: 250px;
 }
 
 .site-top-icons{
@@ -69,3 +78,6 @@
       height: 40px;
       width: 40px;
   }
+  input.form-control.border-0 {
+    width: 250px;
+}
