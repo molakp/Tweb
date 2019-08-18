@@ -4,10 +4,10 @@ $(document).ready(
 
     function () {
         //jQuery.getScript("https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"); meglio non usarlo perchè da solo problemi  ogni volta che lo includo, uso jquery
-        $("body").append("<h3> sAca request fuori </h3>");
+       /* $("body").append("<h3> sAca request fuori </h3>");
         $("#top").load("top.html"); //jQuery instruction to load an html file into a target container
         $("#content").load("content.html");
-        $("#footer").load("footer.html");
+        $("#footer").load("footer.html"); */
 
         $.ajax({
             type: 'GET',
