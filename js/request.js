@@ -26,7 +26,7 @@ $(document).ready(
                         '   <a href="shop-single.html?id='+id+'"><img src="' + image + '" alt="Image placeholder" class="img-fluid"></a>' +
                         '   </figure>' +
                         '   <div class="description-and-price">' +
-                        '    <h3><a href="shop-single.html">' + model + '</a></h3> ' +
+                        '    <h3><a href="shop-single.html?id='+id+'">' + model + '</a></h3> ' +
                         '    <p class="description">' + description + '</p> ' +
                         '     <p class="price">$' + price + '</p>' +
                         '    </div> </div>';

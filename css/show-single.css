@@ -1,0 +1,21 @@
+.product-show {
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 2px;
+}
+.description-and-price-expanded {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    float: right;
+    background-color: ghostwhite;
+    height: 100%;
+    text-align: center;
+    width: 50%;
+}
+img.img-fluid {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+}
