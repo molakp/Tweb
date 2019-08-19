@@ -1,0 +1,37 @@
+
+
+/* style the container */
+.container-form {
+    position: relative;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px 0 30px 0;
+}
+/* style the submit button */
+input[type=submit] {
+    background-color: rgb(129, 196, 98);
+    color: white;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(26, 107, 5);
+}
+
+/* bottom container */
+.bottom-container {
+    text-align: center;
+    background-color: #f2f2f2;
+
+}
+
+/*Applied only if user access to login.html while being already logged in*/
+.login-register{
+
+    text-align: center;
+}
+
+.img-already-logged{
+    max-width: 50%;
+    height: auto;
+}
