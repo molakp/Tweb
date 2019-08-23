@@ -3,10 +3,33 @@ alert("Cookie for Session ID is:");
 var cook= getCookie("PHPSESSID");
 alert("Cookie for Session ID is: " + cook);
 
+$("#login_form").submit(function(e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+           type: "GET",
+           url: url,
+           data: form.serialize(), // serializes the form's elements.
+           success: function(data)
+           {    if(data == "logged"){
+            window.location.replace("index.html");
+           }
+           else
+               alert(data); // show response from the php script.
+           }
+         });
+
+
+});
+
+//parte in automatico e svuota la pagina di login se siamo già loggati, se non lo siamo non fa nulla e la pagina rimane come è
 $.ajax({
     type: 'GET',
-
-    url: 'php/checklogin.php',
+    url: 'php/session.php',
     dataType: "text",
     data: {
         cookie: cook,
@@ -15,8 +38,14 @@ $.ajax({
         alert("Code is: " + data);
         if(data== "logged"){
             $(".login-register").empty(); // JQuery per svuotare il nodo selezionato
-            var code='<img src=images/already-logged-in.png alt="Already logged in!" class="img-already-logged"> <p class="already-logged-in">Already logged in ;)</p>';
+            var code='<img src=images/already-logged-in.png alt="Already logged in" class="img-already-logged"> <p class="already-logged-in">Already logged in , redirecting to home in 2 seconds! ;)</p>';
          $(".login-register").append(code);
+         window.setTimeout(function(){
+
+            // Move to a new location or you can do something else
+            window.location.href = "index.html";
+    
+        }, 2000);
 
         }
         else{
@@ -28,18 +57,18 @@ $.ajax({
         centro con una spunta verde che dice "already logged in"
 
         altrimenti non fare nulla e lasciare che l'utente faccia il login con form
-        chiamanto poi login.php
+        chiamanto poi login.php */
         
         
         
         
         
-        */
+        
 
     },
 
 
-});
+}); 
 
 
 function setCookie(cname, cvalue, exdays) {

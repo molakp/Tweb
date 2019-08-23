@@ -1,6 +1,6 @@
 //var cook = document.cookie.match(/PHPSESSID=[^;]+/);
 var cook= getCookie("PHPSESSID");
-alert("Cookie for Session ID is: " + cook);
+//alert("Cookie for Session ID in session.js is: " + cook);
 
 $.ajax({
     type: 'GET',
@@ -9,11 +9,21 @@ $.ajax({
     dataType: "text",
     data: {
         cookie: cook,
+        
     },
     success: function (data) {
-        alert("Session ID is:" + data);
+
+        if(data == "logged"){}
+           // alert("Logged in session.js");
+        else{
+            // if not logged in must redirect to new page and delete the cookie otherwise on login.html I'll  be logged
+           
+            window.location.replace("login.html");
+
+        }
 
     },
+    
 
 
 });

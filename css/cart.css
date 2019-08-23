@@ -1,0 +1,26 @@
+body {
+    background-color: #FFFFFF;
+    color: #262626;
+    font-family: Sans-Serif;
+}
+.content-slide{
+    background-color: #262626;
+}
+
+.product-slide {
+    width: auto;
+    display: inline-block;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #E2E8CE;
+    text-align: center
+}
+
+.product-slide figure a img {
+    height: 4cm;
+    width: 4cm;
+   
+}
+
+
+

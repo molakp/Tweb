@@ -1,9 +1,23 @@
-//funzione per recuperare parametro id da url html, funziona anche per parametri multipli
+
+
+
+/**
+ * 
+ *   funzione per recuperare parametro id da url html, funziona anche per parametri multipli
+ *
+ * @returns
+ */
 function getSearchParameters() {
     var prmstr = window.location.search.substr(1);
     return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
 }
 
+/**
+ * Works with getSearchParameters
+ *
+ * @param {*} prmstr
+ * @returns params array of data
+ */
 function transformToAssocArray( prmstr ) {
   var params = {};
   var prmarr = prmstr.split("&");
@@ -20,7 +34,7 @@ gender="%00";
 if(params["type"]){
     if(checkUrl(params["type"])){
          type = params["type"];
-         alert("Type is: "+type);
+         //alert("Type is: "+type);
     }
      
 
@@ -28,12 +42,18 @@ if(params["type"]){
 if (params["gender"]){
     if(checkUrl){
         gender= params["gender"];
-        alert("gender is:"+gender);
+       // alert("gender is:"+gender);
     }
      
 }
-getItem();
+getItem(); 
 
+
+
+/**
+ * make ajax request to server and show the result in html  
+ *
+ */
 function getItem () {
     //jQuery.getScript("https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"); meglio non usarlo perchè da solo problemi  ogni volta che lo includo, uso jquery
     var siteurl= "php/category.php?gender="+gender+"&type="+type;
@@ -72,6 +92,13 @@ function getItem () {
     });
 
 }
+
+/**
+ *
+ * check url against regex
+ * @param {*} url
+ * @returns
+ */
 function checkUrl(url){
     if(url.match(/^[0-9a-zA-Z]{1,16}$/)){
        return true;

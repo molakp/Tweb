@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (session_id() == $_GET["cookie"] ) { // se l'utente ha un cookie di sessione valido
-
-   
-   // echo ("ID:".session_id()."Name:".session_name());
+if (session_id() == $_GET["cookie"] && isset($_SESSION["username"]) ){ // se l'utente ha un cookie di sessione valido e la sessione ha 
     
-} else { // se non lo ha vuol dire che non è loggato oopure lo era ma ha perso il cookie
-    echo ("Its a new session ID: ".session_id());
-    redirect("../login.html", "You nedd to log in first!");
+        
+    echo ("logged");
+    
+} else { // se non lo ha vuol dire che non è loggato opure lo era ma ha perso il cookie
+    echo ("Not");
+    setcookie("PHPSESSID", "", time() - 3600, '/');
 }  
 
 

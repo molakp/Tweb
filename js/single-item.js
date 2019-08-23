@@ -14,13 +14,13 @@ function transformToAssocArray( prmstr ) {
   return params;
 }
 
-var params = getSearchParameters();
-alert("ID is: "+params["id"]);
+var params = getSearchParameters(); // params servirà anche per aggiungere al carrello
+//alert("ID is: "+params["id"]);
 
 getItem();
 
 function getItem () {
-    //jQuery.getScript("https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"); meglio non usarlo perchè da solo problemi  ogni volta che lo includo, uso jquery
+    
 
 
     $.ajax({
@@ -53,6 +53,28 @@ function getItem () {
                 div.innerHTML = code;
                 $(".content-slide").append(code);
 
+
+                $(".add-to-cart").click(function (e) { 
+                    e.preventDefault();
+                    $.ajax({
+                        type: "GET",
+                        url: "php/add-cart.php",
+                        data:{
+                           id:  params["id"] //  id of the product
+                          }, 
+                        success: function(data)
+                        {    if(data == "ok"){
+                            $(".description-and-price-expanded ").empty();
+                            var code='<img src=images/added-to-cart.png alt="Item added to cart!" class="img-added-to-cart"> <p class="already-logged-in">Item added to cart!</p>';
+                            $(".description-and-price-expanded ").append(code);
+                        }
+                        else
+                            alert(data); // show response from the php script.
+                        }
+                      });
+                    
+                });
+
             });
         }
 
@@ -60,3 +82,4 @@ function getItem () {
     });
 
 }
+
