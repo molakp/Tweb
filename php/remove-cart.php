@@ -28,5 +28,12 @@ if (isset($_GET["id"])) {
     echo ("ok");
 
 } else {
-    echo ("error");
+    if(isset($_GET["buy"])){
+        unset($_SESSION['items']);
+        echo ("ok");
+    }
+    else{
+        echo ("error");
+    }
+   
 }
