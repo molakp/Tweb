@@ -5,6 +5,7 @@ $.ajax({
 
     success: function (data) {
         alert(data);
+        var total_price=0;
         data.forEach(element => {
             var brand = element.brand;
             var size = element.size;
@@ -20,35 +21,36 @@ $.ajax({
             '    <h3><a href="shop-single.html?id='+id+'">' + model + '</a></h3> ' +
             '    <p class="description">' + description + '</p> ' +
             '     <p class="price">$' + price + '</p>' +
-            '     <button class="remove-from-cart"> Remove </button>  </div> </div> ';                            
+            '     <button class="remove-from-cart-'+id+'"> Remove </button>  </div> </div> ';                            
            
             var div = document.createElement("div");
             //div.className("product-slide");
             div.innerHTML = code;
             $(".content-slide").append(code);
 
-
-           /* $(".remove-from-cart").click(function (e) { 
+            total_price=total_price+ parseInt(price) ;
+           
+            $(".remove-from-cart-"+id).click(function (e) { 
                 e.preventDefault();
                 $.ajax({
                     type: "GET",
-                    url: "php/cart.php",
+                    url: "php/remove-cart.php",
                     data:{
-                       id:  params["id"] //  id of the product
+                       id: id //  id of the product
                       }, 
                     success: function(data)
                     {    if(data == "ok"){
-                        $(".description-and-price-expanded ").empty();
-                        var code='<img src=images/added-to-cart.png alt="Item added to cart!" class="img-added-to-cart"> <p class="already-logged-in">Item added to cart!</p>';
-                        $(".description-and-price-expanded ").append(code);
+                        location.reload();
+
                     }
                     else
                         alert(data); // show response from the php script.
                     }
                   }); 
                 
-            }); */
+            }); 
         })
+        $("#summary-total").append(total_price+"€");
     }
 });
 

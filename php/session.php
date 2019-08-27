@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (session_id() == $_GET["cookie"] && isset($_SESSION["username"]) ){ // se l'utente ha un cookie di sessione valido e la sessione ha 
+if (session_id() == $_GET["cookie"] && isset($_SESSION["username"] ) ){ // se l'utente ha un cookie di sessione valido e la sessione ha 
     
         
     echo ("logged");

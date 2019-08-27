@@ -7,8 +7,7 @@ $mysqli = new mysqli("localhost", "root", "", "shoeshop");
 
 
 
-$rows = $mysqli->query("SELECT * FROM shoe WHERE shoeID='5'");
-$followingdata = $rows->fetch_assoc(); #trasnform in associative array from mysqli type
+
 //print_r($followingdata); //The print_r() function is a built-in function in PHP and is used to print or display information stored in a variable.
 $element_performed=0;
 echo("[");
