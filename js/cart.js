@@ -67,8 +67,10 @@ $(".buy").click(function (e) {
             if (data == "ok") {
               
                 $("#content").empty();
-                var code = '<img src=images/added-to-cart.png alt="success" class="img-success-buy"> <p class="already-logged-in">Thank you for buying!</p>';
+                var code = '<img src=images/added-to-cart.png alt="success" class="img-success-buy">'+
+                 '<p class="already-logged-in">Thank you for buying!</p>';
                 $("#content").append(code);
+                $("#content").css("text-align","center");
             }
             else
                 alert(data); // show response from the php script.

@@ -43,7 +43,7 @@ function verify_login_cookie(){
                 $username= $mysqli->real_escape_string( $followingdata["username"]);
                 $login_hash=hash('sha256', $username.time().random_int(0,100000000));//hash in sha256 username + data unix+ cripto-safe random int  come salt
                 $login_hash=$mysqli->real_escape_string( $login_hash);
-                setcookie("login", $login_hash , time() + 3600,"/"); // set cookie for login 
+                setcookie("login", $login_hash , time() + 3600*24,"/"); // set cookie for login 
                
                
                 //salvo l'hash del login che mi serve per controllare il cookie fornito dall'utente 

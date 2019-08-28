@@ -4,29 +4,29 @@ $(document).ready(
 
     function () {
         //jQuery.getScript("https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"); meglio non usarlo perchè da solo problemi  ogni volta che lo includo, uso jquery
-       /* $("body").append("<h3> sAca request fuori </h3>");
-        $("#top").load("top.html"); //jQuery instruction to load an html file into a target container
-        $("#content").load("content.html");
-        $("#footer").load("footer.html"); */
+        /* $("body").append("<h3> sAca request fuori </h3>");
+         $("#top").load("top.html"); //jQuery instruction to load an html file into a target container
+         $("#content").load("content.html");
+         $("#footer").load("footer.html"); */
 
         $.ajax({
             type: 'GET',
             url: 'php/retrieve.php',
             dataType: "json",
-            number:'10',
+            number: '10',
             success: function (data) {
 
                 data.forEach(element => {
-                    var id=element.id;
+                    var id = element.id;
                     var model = element.model;
                     var description = element.description;
                     var price = element.price;
                     var image = element.image;
                     var code = ' <div class ="product-slide">   <figure class="block-4-image">' +
-                        '   <a href="shop-single.html?id='+id+'"><img src="' + image + '" alt="Image placeholder" class="img-fluid"></a>' +
+                        '   <a href="shop-single.html?id=' + id + '"><img src="' + image + '" alt="Image placeholder" class="img-fluid"></a>' +
                         '   </figure>' +
                         '   <div class="description-and-price">' +
-                        '    <h3><a href="shop-single.html?id='+id+'">' + model + '</a></h3> ' +
+                        '    <h3><a href="shop-single.html?id=' + id + '">' + model + '</a></h3> ' +
                         '    <p class="description">' + description + '</p> ' +
                         '     <p class="price">$' + price + '</p>' +
                         '    </div> </div>';
@@ -35,11 +35,44 @@ $(document).ready(
                     //div.className("product-slide");
                     div.innerHTML = code;
                     $(".content-slide").append(code);
+                    $(function () {
+                        $(".product-slide").draggable({ revert: true, zIndex: 100, scroll: false, cursorAt: { bottom: 0 } });
+                        $(".button-icon-cart").droppable({
+                            tolerance: "pointer",
+                            drop: function (event, ui) {
+
+                                //ui.draggable.find("div").css("background-color","black");
+                                var id = ui.draggable.find("a").attr("href");
+                                id = id.replace('shop-single.html?id=', '');
+                                // alert("dropped"+$(this).find("#img-fluid").attr("href"));
+                                alert("dropped id " + id);
+                                $.ajax({
+                                    type: "GET",
+                                    url: "php/add-cart.php",
+                                    data: {
+                                        id: id //  id of the product
+                                    },
+                                    success: function (data) {
+                                        if (data == "ok") {
+                                           /* $(".description-and-price-expanded ").empty();
+                                            var code = '<img src=images/added-to-cart.png alt="Item added to cart!" class="img-added-to-cart"> <p class="already-logged-in">Item added to cart!</p>';
+                                            $(".description-and-price-expanded ").append(code); */
+                                            ui.draggable.empty();
+                                        }
+                                        else
+                                            alert(data); // show response from the php script.
+                                    }
+                                });
+
+
+                            }
+                        });
+                    });
 
                 });
             }
-            
-            
+
+
         });
        /* $.get("demo_test.asp", function(data, status){
             alert("Data: " + data + "\nStatus: " + status);
@@ -59,6 +92,7 @@ $(document).ready(
     */ }
 
 )
+
 
 
 

@@ -42,15 +42,42 @@ $.ajax({
 
             alert("logged +cookie ");
             $(".login-register").empty(); // JQuery per svuotare il nodo selezionato
-            var code = '<img src=images/already-logged-in.png alt="Already logged in" class="img-already-logged"> <p class="already-logged-in">Already logged in , redirecting to home in 2 seconds! ;)</p>';
+            var code = '<img src=images/already-logged-in.png alt="Already logged in" class="img-already-logged">' +
+            '<p class="already-logged-in">Already logged in , redirecting to home in 2 seconds! ;)</p>'+
+            ' <div id="homepage"><button class ="home-button">Homepage</button></div>'+
+            ' <div id="logout-id"><button class ="logout-button">Logout</button></div>';
             $(".login-register").append(code);
-            window.setTimeout(function () {
+            $(".home-button").click(function(e){
 
-                // Move to a new location or you can do something else
                 window.location.href ="index.html";
 
+            });
+            $(".logout-button").click(function(e){
+                $.ajax({
+                    type: "GET",
+                    url: "php/logout.php",
+                    
+                    success: function (data) {
+                        if (data == "logout") {
+                            alert("LOGOUT");
+                            window.location.href ="login.html";
+                        }
+                        else
+                            alert("Error:"+data); // show response from the php script.
+                    }
+                });
+               
 
-            }, 2000);
+            });
+
+
+            
+
+                // Move to a new location or you can do something else
+                //window.location.href ="index.html";
+
+
+           
             // Move to a new location or you can do something else
             
         }
@@ -60,6 +87,8 @@ $.ajax({
 
     }
 });
+
+
 
 //parte in automatico e svuota la pagina di login se siamo già loggati, se non lo siamo non fa nulla e la pagina rimane come è
 /*$.ajax({
