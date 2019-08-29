@@ -14,16 +14,16 @@ function db_connect()
     return $dsn;
 }
 
-$db = db_connect();
+#$db = db_connect();
 $query = "SELECT * FROM `shoe` WHERE 1 LIMIT 9";
-$rows = $db->query($query);
+#$rows = $db->query($query);
 $mysqli = new mysqli("localhost", "root", "", "shoeshop");
 $result = $mysqli -> query($query);
 //header("Content-type: application/json");
 echo("[");
 $rows_number=mysqli_num_rows ($result);
 $element_performed=0;
-foreach ($rows as $row) {
+foreach ($result as $row) {
     $s = new Shoe($row["shoeID"],$row["model"], $row["price"], $row["description"],$row["image"]);
     echo ($s->toJson());
     $element_performed++;

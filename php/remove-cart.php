@@ -6,7 +6,7 @@ session_start();
 #var_dump($_SESSION['items']);
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
-    if (!isset($_SESSION['items'])) {
+    if (isset($_SESSION['items'])) {
         $_SESSION['items'] = array();
     }
   /*  $index_to_remove = 0;
@@ -29,8 +29,14 @@ if (isset($_GET["id"])) {
 
 } else {
     if(isset($_GET["buy"])){
-        unset($_SESSION['items']);
-        echo ("ok");
+        if(isset($_SESSION['items'])){ // if there is an item to buy
+            unset($_SESSION['items']);
+            echo ("ok");
+        }
+        else{
+            echo("empty"); // else cart is empty 
+        }
+        
     }
     else{
         echo ("error");

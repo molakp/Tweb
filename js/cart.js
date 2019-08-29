@@ -57,6 +57,8 @@ $.ajax({
 //function for buy button 
 
 $(".buy").click(function (e) {
+    
+
     $.ajax({
         type: "GET",
         url: "php/remove-cart.php",
@@ -65,15 +67,27 @@ $(".buy").click(function (e) {
         },
         success: function (data) {
             if (data == "ok") {
-              
+
                 $("#content").empty();
-                var code = '<img src=images/added-to-cart.png alt="success" class="img-success-buy">'+
-                 '<p class="already-logged-in">Thank you for buying!</p>';
+                var code = '<img src=images/added-to-cart.png alt="success" class="img-success-buy">' +
+                    '<p class="already-logged-in">Thank you for buying!</p>';
                 $("#content").append(code);
-                $("#content").css("text-align","center");
+                $("#content").css("text-align", "center");
+                $("#summary").empty();
             }
-            else
-                alert(data); // show response from the php script.
+            else{
+                if(data=="empty"){
+                    var code= "You need to add something to the cart first!";
+                    $("#content").append(code);
+                    $("#content").css("text-align","center");
+
+                }
+                else{
+                    alert(data); // show response from the php script.
+
+                }
+            }
+                
         }
     });
 
@@ -82,3 +96,17 @@ $(".buy").click(function (e) {
 
 });
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}

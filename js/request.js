@@ -37,6 +37,38 @@ $(document).ready(
                     $(".content-slide").append(code);
                     $(function () {
                         $(".product-slide").draggable({ revert: true, zIndex: 100, scroll: false, cursorAt: { bottom: 0 } });
+                        $(".button-icon-wishlist").droppable({
+                            tolerance: "pointer",
+                            drop: function (event, ui) {
+
+                                //ui.draggable.find("div").css("background-color","black");
+                                var id = ui.draggable.find("a").attr("href");
+                                id = id.replace('shop-single.html?id=', '');
+                                // alert("dropped"+$(this).find("#img-fluid").attr("href"));
+                                alert("dropped id " + id);
+                                $.ajax({
+                                    type: "GET",
+                                    url: "php/add-wishlist.php",
+                                    data: {
+                                        id: id //  id of the product
+                                    },
+                                    success: function (data) {
+                                        if (data == "ok") {
+
+                                            ui.draggable.empty();
+                                        }
+                                        else {
+                                            if (data == "duplicate")
+                                                alert("item already in wishlist");
+
+                                        }
+
+                                    }
+                                });
+
+
+                            }
+                        });
                         $(".button-icon-cart").droppable({
                             tolerance: "pointer",
                             drop: function (event, ui) {
@@ -54,9 +86,9 @@ $(document).ready(
                                     },
                                     success: function (data) {
                                         if (data == "ok") {
-                                           /* $(".description-and-price-expanded ").empty();
-                                            var code = '<img src=images/added-to-cart.png alt="Item added to cart!" class="img-added-to-cart"> <p class="already-logged-in">Item added to cart!</p>';
-                                            $(".description-and-price-expanded ").append(code); */
+                                            /* $(".description-and-price-expanded ").empty();
+                                             var code = '<img src=images/added-to-cart.png alt="Item added to cart!" class="img-added-to-cart"> <p class="already-logged-in">Item added to cart!</p>';
+                                             $(".description-and-price-expanded ").append(code); */
                                             ui.draggable.empty();
                                         }
                                         else

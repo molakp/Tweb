@@ -25,3 +25,6 @@ img.img-fluid {
     height: 50%;
     
 }
+.img-fluid{
+    max-height: 500px;
+}

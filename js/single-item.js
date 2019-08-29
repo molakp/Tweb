@@ -47,12 +47,37 @@ function getItem () {
                 '       <p class="description">' + description + '</p> ' +
                 '<p class="avaiable-size"> Size: '+size+ '</p>'+
                 '     <p class="price">$' + price + '</p>' +
-                '   <button class="add-to-cart">Add to cart!</button> </div> </div>';
+                '   <button class="add-to-cart">Add to cart!</button>' +
+                '   <button class="add-to-wishlist">Add to wishlist!</button>'+
+                '</div> </div>';
                 var div = document.createElement("div");
                 //div.className("product-slide");
                 div.innerHTML = code;
                 $(".content-slide").append(code);
+                $(".add-to-wishlist").click(function(e){
 
+                    $.ajax({
+                        type: "GET",
+                        url: "php/add-wishlist.php",
+                        data: {
+                            id: id //  id of the product
+                        },
+                        success: function (data) {
+                            if (data == "ok") {
+
+                                $(".description-and-price-expanded ").empty();
+                                var code='<img src=images/added-to-cart.png alt="Item added to wishlist!" class="img-added-to-cart"> <p class="already-logged-in">Item added to wishlist!</p>';
+                                $(".description-and-price-expanded ").append(code);
+                            }
+                            else {
+                                if (data == "duplicate")
+                                    alert("item already in wishlist");
+
+                            }
+
+                        }
+                    });
+                });
 
                 $(".add-to-cart").click(function (e) { 
                     e.preventDefault();

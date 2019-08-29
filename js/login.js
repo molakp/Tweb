@@ -26,6 +26,30 @@ $("#login_form").submit(function (e) {
 
 
 });
+$("#register_form").submit(function (e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+        type: "GET",
+        url: "php/register.php",
+        data: form.serialize(), // serializes the form's elements.
+        success: function (data) {
+            if (data == "ok") {
+                alert("registration succes!");
+                window.location.href="login.html";
+            }
+            else
+                alert("Error in registration:"+data); // show response from the php script.
+        }
+    });
+
+
+});
+
 
 var redirect=false;
 var cook = getCookie("login");
@@ -43,7 +67,7 @@ $.ajax({
             alert("logged +cookie ");
             $(".login-register").empty(); // JQuery per svuotare il nodo selezionato
             var code = '<img src=images/already-logged-in.png alt="Already logged in" class="img-already-logged">' +
-            '<p class="already-logged-in">Already logged in , redirecting to home in 2 seconds! ;)</p>'+
+            '<p class="already-logged-in">Already logged in  ;)</p>'+
             ' <div id="homepage"><button class ="home-button">Homepage</button></div>'+
             ' <div id="logout-id"><button class ="logout-button">Logout</button></div>';
             $(".login-register").append(code);
