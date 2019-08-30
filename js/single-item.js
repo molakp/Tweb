@@ -1,3 +1,9 @@
+
+
+
+
+
+
 //funzione per recuperare parametro id da url html, funziona anche per parametri multipli
 function getSearchParameters() {
     var prmstr = window.location.search.substr(1);
@@ -15,7 +21,7 @@ function transformToAssocArray( prmstr ) {
 }
 
 var params = getSearchParameters(); // params servirà anche per aggiungere al carrello
-//alert("ID is: "+params["id"]);
+
 
 getItem();
 
@@ -51,7 +57,7 @@ function getItem () {
                 '   <button class="add-to-wishlist">Add to wishlist!</button>'+
                 '</div> </div>';
                 var div = document.createElement("div");
-                //div.className("product-slide");
+                
                 div.innerHTML = code;
                 $(".content-slide").append(code);
                 $(".add-to-wishlist").click(function(e){
