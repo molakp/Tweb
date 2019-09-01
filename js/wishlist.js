@@ -17,6 +17,10 @@ function getItem() {
         dataType: "json",
 
         success: function (data) {
+            if(JSON.stringify(data)== "[]"){ // se la wishlist è vuota
+                $("#content").append("Your wishlist is empty, try to add something!");
+
+            }
             //alert(data);
             data.forEach(element => {
                 var id = element.id;

@@ -104,7 +104,7 @@ if (isset($_REQUEST["username"]) && isset($_REQUEST["password"])) {
         $message = "Wrong username and or password!";
         #echo ("<script type='text/javascript'>alert('$message');</script>");
         #redirect("../login.html", "Wrong username and or password!");
-        echo ("not");
+        echo ("Wrong username and or password!");
 
     }
 }
@@ -145,7 +145,9 @@ function is_password_correct($name, $password)
     if ($followingdata) {
         {
             $correct_password = $followingdata["password"];
-            return $password === $correct_password;
+            $password= hash('sha256',$password);
+           
+            return  $password === $correct_password;
         }
     } else {
         return false; # user not found

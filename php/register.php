@@ -23,7 +23,7 @@ if (isset($_REQUEST["usernameRegister"]) && isset($_REQUEST["passwordRegister"])
      $result=$mysqli->query($query);
      $result=$result->fetch_assoc();
      $userID=$result["UserID"]+1; #correct user id to insert
-        
+     $password=hash('sha256',$password);   
      $query="INSERT INTO `user` (`UserID`, `username`, `password`, `hash`) VALUES ('$userID', '$username', '$password', '');";
      $result=$mysqli->query($query);
     
@@ -31,7 +31,7 @@ if (isset($_REQUEST["usernameRegister"]) && isset($_REQUEST["passwordRegister"])
          echo("ok");
      }
      else{
-         var_dump($result);
+         echo ("error");
 
      }
     }else{

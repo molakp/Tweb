@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.30)  31 AUG 2019 01:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.30)  31 AUG 2019 23:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -104,7 +104,25 @@ File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 File: listings.cfg 2019/02/27 1.8b listings configuration
 ))
 Package: listings 2019/02/27 1.8b (Carsten Heinz)
- (c:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+ (c:/texlive/2019/texmf-dist/tex/latex/pbox/pbox.sty
+Package: pbox 2011/12/07 v1.2 Dynamic parboxes
+ (c:/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count108
+\calc@Bcount=\count109
+\calc@Adimen=\dimen110
+\calc@Bdimen=\dimen111
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count110
+\calc@Cskip=\skip45
+) (c:/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\pb@xlen=\skip46
+) (c:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 Package csquotes Info: Checking for multilingual support...
@@ -128,16 +146,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
  (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen110
+\scratchcounter=\count111
+\scratchdimen=\dimen112
 \scratchbox=\box29
-\nofMPsegments=\count109
-\nofMParguments=\count110
+\nofMPsegments=\count112
+\nofMParguments=\count113
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen111
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen113
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
 \everyMPtoPDFconversion=\toks18
 ) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -186,7 +204,7 @@ italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
 italian.ldf    on input line 30.
 
-\c@lstlisting=\count114
+\c@lstlisting=\count117
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 34.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -205,36 +223,52 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 47.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 48.
  (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
- [1] [2]
-<airmax.jpg, id=18, 1405.25pt x 1003.75pt>
-File: airmax.jpg Graphic file (type jpg)
-<use airmax.jpg>
-Package pdftex.def Info: airmax.jpg  used on input line 153.
-(pdftex.def)             Requested size: 390.0pt x 278.5669pt.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
+ [1] [2] [3] [4]
+Overfull \hbox (23.3494pt too wide) in paragraph at lines 188--191
+[]\OT1/cmr/bx/n/12 login.php\OT1/cmr/m/n/12 : "SE-LECT pas-sword FROM user WHE-RE user-na-me='$name'"; 
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (52.05952pt too wide) in paragraph at lines 191--193
+\OT1/cmr/m/n/12 "SELECT DI-STINCT shoe.shoeID,shoe.brand, shoe.size, shoe.model,shoe.image,
+ []
 
-[3] [4 <c:/xampp/htdocs/progetto/Docs/airmax.jpg>] (c:/xampp/htdocs/progetto/Docs/relazione.aux) ) 
+
+Overfull \hbox (7.3213pt too wide) in paragraph at lines 191--193
+\OT1/cmr/m/n/12 wi-shli-st ON wi-shli-st.shoeID WHE-RE shoe.shoeID=wishlist.shoeID AND
+ []
+
+[5]
+<db.png, id=27, 311.36325pt x 237.88875pt>
+File: db.png Graphic file (type png)
+<use db.png>
+Package pdftex.def Info: db.png  used on input line 221.
+(pdftex.def)             Requested size: 390.0pt x 297.98453pt.
+
+Overfull \hbox (50.52223pt too wide) in paragraph at lines 226--255
+ [] 
+ []
+
+[6 <c:/xampp/htdocs/progetto/Docs/db.png>] [7] (c:/xampp/htdocs/progetto/Docs/relazione.aux) ) 
 Here is how much of TeX's memory you used:
- 4672 strings out of 492609
- 64519 string characters out of 6132818
- 340881 words of memory out of 5000000
- 8542 multiletter control sequences out of 15000+600000
+ 4818 strings out of 492609
+ 66405 string characters out of 6132818
+ 343735 words of memory out of 5000000
+ 8677 multiletter control sequences out of 15000+600000
  9623 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,40p,856b,1170s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,40p,856b,1170s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on c:/xampp/htdocs/progetto/Docs/relazione.pdf (5 pages, 299674 bytes).
+Output written on c:/xampp/htdocs/progetto/Docs/relazione.pdf (8 pages, 127208 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

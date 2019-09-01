@@ -3,8 +3,16 @@
 \contentsline {section}{\numberline {1}Tema e sezioni del sito}{1}% 
 \contentsline {section}{\numberline {2}Funzionalit\IeC {\`a}}{1}% 
 \contentsline {subsection}{\numberline {2.1}Login}{1}% 
-\contentsline {subsection}{\numberline {2.2}Registrazione}{2}% 
-\contentsline {subsection}{\numberline {2.3}Gestione del contenuto generato dall'utente}{2}% 
-\contentsline {subsubsection}{\numberline {2.3.1}Wishlist}{2}% 
-\contentsline {subsubsection}{\numberline {2.3.2}Carrello}{3}% 
-\contentsline {section}{\numberline {3}Results}{3}% 
+\contentsline {subsection}{\numberline {2.2}Logout}{2}% 
+\contentsline {subsection}{\numberline {2.3}Registrazione}{2}% 
+\contentsline {subsection}{\numberline {2.4}Gestione del contenuto generato dall'utente}{2}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Wishlist}{2}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Carrello}{3}% 
+\contentsline {section}{\numberline {3}Caratteristiche}{3}% 
+\contentsline {subsection}{\numberline {3.1}Usabilit\IeC {\`a}}{3}% 
+\contentsline {subsection}{\numberline {3.2}Animazione}{4}% 
+\contentsline {subsection}{\numberline {3.3}Sessioni}{4}% 
+\contentsline {subsection}{\numberline {3.4}Interrogazione del database}{4}% 
+\contentsline {subsection}{\numberline {3.5}Validazione dati input e sicurezza}{5}% 
+\contentsline {section}{\numberline {4}Front-end}{5}% 
+\contentsline {section}{\numberline {5}Back-end}{6}% 
